@@ -16,6 +16,11 @@ do Express, já para manipulação de datas foi usado o MomentJS.
 <h3>Uso do Postman</h3>
 <p>Fiz o upload do arquivo de coleções do Postman para esse repositório, no arquivo <i>API PETSHOP.postman_collection</i>. Este contém uma coleção de chamadas que utilizei para
 realizar testes no projeto. :) </p>
+ 
+<br/>
+ <h3>Conexão com o banco de dados</h3>
+ <p>O caminho para o arquivo de configuração de banco de dados é <i>Infrastructure/connection.js</i> e nele deve ser adicionado o host, porta, usuário e senha, além do banco
+ de dados que será usado. O banco deve ser criado, pois apenas a tabela será gerada automaticamente.</p>
 
 <p>Este projeto fez parte de meus estudos na Formação NodeJS da Alura.</p>
 </div>
