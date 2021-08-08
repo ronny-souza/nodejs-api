@@ -15,4 +15,11 @@ module.exports = app => {
         const service = request.body
         Service.add(service, response)
     })
+
+    app.patch('/services/:id', (request, response) => {
+        const id = parseInt(request.params.id)
+        const values = request.body
+
+        Service.update(id, values, response)
+    })
 }

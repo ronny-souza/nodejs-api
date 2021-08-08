@@ -65,6 +65,21 @@ class Service {
             }
         })
     }
+
+    update(id, values, response) {
+        if(values.service_date) {
+            values.service_date = moment(values.service_date, 'DD/MM/YYYY').format('YYYY-MM-DD')
+        }
+        const sql = `UPDATE services SET ? WHERE id = ${id}`
+
+        connection.query(sql, values, (errors, results) => {
+            if(errors) {
+                response.status(400).json(errors)
+            } else {
+                response.status(200).json(results)
+            }
+        })
+    }
 }
 
 module.exports = new Service
