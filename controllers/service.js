@@ -2,13 +2,17 @@ const Service = require('../model/service')
 
 
 module.exports = app => {
-    app.get('/services', (req, res) => {
-        res.send("Você está na rota de atendimentos e atualizando sozinho")
+    app.get('/services', (request, response) => {
+        Service.list(response)
     })
 
-    app.post('/services', (req, res) => {
-        const service = req.body
-        Service.add(service)
-        res.send("Você está realizando um post na rota de atendimentos")
+    app.get('/services/:id', (request, response) => {
+        const id = parseInt(request.params.id)
+        Service.getById(id, response)
+    })
+
+    app.post('/services', (request, response) => {
+        const service = request.body
+        Service.add(service, response)
     })
 }

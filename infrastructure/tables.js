@@ -5,7 +5,7 @@ class Tables {
     }
 
     createService() {
-        const sql = 'CREATE TABLE IF NOT EXISTS services( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, client VARCHAR(100) NOT NULL, animal VARCHAR(20), service VARCHAR(40) NOT NULL, service_date DATETIME NOT NULL, schedule_date DATETIME NOT NULL, status VARCHAR(20) NOT NULL, observations TEXT)'
+        const sql = 'CREATE TABLE IF NOT EXISTS services( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, client VARCHAR(100) NOT NULL, animal VARCHAR(20), service VARCHAR(40) NOT NULL, service_date DATE NOT NULL, schedule_date DATE NOT NULL, status VARCHAR(20) NOT NULL, observations TEXT)'
         
         this.connection.query(sql, (error) => {
             if(error) {
