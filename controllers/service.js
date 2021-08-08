@@ -22,4 +22,10 @@ module.exports = app => {
 
         Service.update(id, values, response)
     })
+
+    app.delete('/services/:id', (request, response) => {
+        const id = parseInt(request.params.id)
+
+        Service.deleteById(id, response)
+    })
 }

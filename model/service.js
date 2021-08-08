@@ -35,7 +35,7 @@ class Service {
                 if(errors) {
                     response.status(400).json(errors)
                 } else {
-                    response.status(201).json(results)
+                    response.status(201).json(service)
                 }
             })
         }
@@ -76,7 +76,19 @@ class Service {
             if(errors) {
                 response.status(400).json(errors)
             } else {
-                response.status(200).json(results)
+                response.status(200).json({id, ...values})
+            }
+        })
+    }
+
+    deleteById(id, response) {
+        const sql = `DELETE FROM services WHERE id = ${id}`
+        
+        connection.query(sql, (errors, results) => {
+            if(errors) {
+                response.status(400).json(errors)
+            } else {
+                response.status(200).json({id})
             }
         })
     }
